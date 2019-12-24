@@ -1,5 +1,5 @@
 import os
-
+from flask import Flask, jsonify, request
 import requests
 import time
 from datetime import datetime
@@ -41,6 +41,9 @@ def format_bitcoin_history(bitcoin_history):
     # Join the rows delimited by <br> tag: row1<br>row2<br>row3
     return '<br>'.join(rows)
 
+# app
+app = Flask(__name__)
+
 def main():
     bitcoin_history = []
     while True:
@@ -65,4 +68,4 @@ def main():
         time.sleep(24*60)
 
 if __name__ == '__main__':
-    main()
+    app.run(port = 5000, debug=True)

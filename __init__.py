@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 import os
 
-SECRET_KEY = str(os.getenv("APP_SECRET_KEY")) #"bt7uzbmImEmXzDPrIb1oL7HwJUVLxrp9ZmvdMflwIG3"
+SECRET_KEY = str(os.getenv("APP_SECRET_KEY"))
 BITCOIN_API_URL = 'https://api.coinmarketcap.com/v1/ticker/bitcoin/'
 IFTTT_WEBHOOKS_URL = 'https://maker.ifttt.com/trigger/{}/with/key/{}'
 BITCOIN_PRICE_THRESHOLD = 12000  # Set this to whatever you like
@@ -62,7 +62,7 @@ def main():
 
         # Sleep for 5 minutes
         # (For testing purposes you can set it to a lower number)
-        time.sleep(2)
+        time.sleep(24*60)
 
 if __name__ == '__main__':
     main()
